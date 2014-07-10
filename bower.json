@@ -1,0 +1,30 @@
+{
+  "name": "sr-list",
+  "version": "0.0.1",
+  "homepage": "https://github.com/SrMouraSilva/sr-list",
+  "authors": [
+    "SrMouraSilva <mateus.moura@hotmail.com>"
+  ],
+  "description": "An web component list-group abstraction with pre-defined handling methods",
+  "main": "index.html",
+  "moduleType": [
+    "amd",
+    "node"
+  ],
+  "keywords": [
+    "Polymer",
+    "Web",
+    "Component"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "core-component-page": "Polymer/core-component-page#>=0.3.0 <1.0.0"
+  }
+}
