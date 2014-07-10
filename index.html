@@ -21,12 +21,13 @@
 
 	<sr-list type="vertical">
 		<sr-item>Normal</sr-item>
-		<sr-item selected="selected">Selected</sr-item>
-		<sr-item disabled="disabled">Disabled</sr-item>
-		<sr-item separator="separator"></sr-item>
+		<sr-item selected>Selected</sr-item>
+		<sr-item disabled>Disabled</sr-item>
+		<sr-item selected disabled>Selected and disabled</sr-item>
+		<sr-item separator></sr-item>
 		<sr-item icon="icon.png">With icon</sr-item>
 		<sr-item icon-class="fa-plus">With icon-class</sr-item>
-		<sr-item separator="separator"></sr-item>
+		<sr-item separator></sr-item>
 		<sr-item href="index.html">With href (please, mouseover me)</sr-item>
 	</sr-list>
 
@@ -36,12 +37,15 @@
 	<nav role="navigation">
 
 	<sr-list type="horizontal">
-		<sr-item icon="icon.png">A menu item</sr-item>
-		<sr-item separator="separator"></sr-item>
+		<sr-item id="test" icon="icon.png">A menu item</sr-item>
+		<sr-item separator></sr-item>
 		<sr-item href="javascript:console.log('clicked')">Logout</sr-item>
 	</sr-list>
 
 	</nav>
 	* [implementar aria-disabled](http://www.w3.org/WAI/PF/aria/states_and_properties#aria-disabled)
   </body>
+  <script>
+  var test = document.getElementById("test");
+  </script>
 </html>

@@ -55,16 +55,15 @@ __Note__: strikethrough -> not implemented
   - ~~Values: "vertical", "horizontal"~~ (buggy)
 
 ##### sr-item
-* icon: Add a icon image in left of the text (buggy)
+* icon: Add a icon image in left of the text (only on firefox)
 * ~~icon-class: Class of image src. [Like as Font Awesome](http://fortawesome.github.io/Font-Awesome/)~~
-* disabled: Disable a list element (buggy)
-  - Value: "disabled"
-* selected: Disable a list element (buggy)
-  - Value: "false", "true"
-* href: As a[type=href] attribute. Use to redirect page or add javascript methods (buggy)
-* separator: Separator divider (buggy)
+* disabled: Disable it (only on firefox)
+* selected: Select it  (only on firefox)
+* href: As a[type=href] attribute. Use to redirect page or add javascript methods (only on firefox)
+* separator: Separator divider (only sr-menu[horizontal] and firefox)
 
-### ~~Handling~~
+#### ~~Handling~~
+##### sr-menu
 * ~~add~~
 * ~~get~~
 * ~~del~~
@@ -75,8 +74,16 @@ __Note__: strikethrough -> not implemented
 * ~~getSelected~~
 * ~~getSelectedAll~~
 
+##### sr-item
+* isSelected: return boolean;
+* select(): Change state to select;
+* select(false);
 
-### ~~Customing desing~~
+* isDisabled: return boolean;
+* disable(): Change state to disabled;
+* disable(false): Change state to enabled;
+
+#### ~~Customing desing~~
 * ~~text color / font~~
 * ~~item padding~~
 * ~~item :hover :active: focus~~
