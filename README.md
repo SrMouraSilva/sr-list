@@ -75,11 +75,10 @@ __Note__: strikethrough -> not implemented
 * ~~getSelectedAll~~
 
 ##### sr-item
-* isSelected: return boolean;
+* isSelected(): return boolean; 
 * select(): Change state to select;
 * select(false): Change state to select;
-
-* isDisabled: return boolean;
+* isDisabled(): return boolean;
 * disable(): Change state to disabled;
 * disable(false): Change state to enabled;
 
