@@ -83,18 +83,21 @@
 			pointer-events: none;
 		}
 
-		/*
-		a:focus {
-			outline: none;
+		/* Link */
+		:host[href] {
+			cursor: pointer;
+			padding: 0; /* gambiarra daqui ... */
 		}
-		a:focus span {
+		a { /* CSS not visible */
+			padding: 10px 15px; /* gambiarra ... até aqui */
+		}
+		a:focus { /* CSS not visible */
 			outline: 1px #a4c6fd solid;
 			background-color: rgba(255, 255, 255, 0.8);
 		}
-		a:active span {
+		a:active { /* CSS not visible */
 			background-color: #FFDD00 !important;
 		}
-		*/
 
 		/* implementando */
 		.icon {
