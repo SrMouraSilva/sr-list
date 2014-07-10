@@ -12,7 +12,7 @@ A ideia do <sr-list> é justamente dar o básico do que já precisamos há tempo
 
 Support
 ----------
-Currently only in Chrome :/
+Firefox, Chrome
 
 How to use
 ----------
@@ -24,12 +24,12 @@ How to use
 
 	<sr-list type="vertical">
 		<sr-item>Normal</sr-item>
-		<sr-item selected="selected">Selected</sr-item>
-		<sr-item disabled="disabled">Disabled</sr-item>
-		<sr-item separator="separator"></sr-item>
+		<sr-item selected>Selected</sr-item>
+		<sr-item disabled>Disabled</sr-item>
+		<sr-item separator></sr-item>
 		<sr-item icon="icon.png">With icon</sr-item>
 		<sr-item icon-class="fa-plus">With icon-class</sr-item>
-		<sr-item separator="separator"></sr-item>
+		<sr-item separator></sr-item>
 		<sr-item href="index.html">With href (please, mouseover me)</sr-item>
 	</sr-list>
 
@@ -40,7 +40,7 @@ How to use
 
 	<sr-list type="horizontal">
 		<sr-item icon="icon.png">A menu item</sr-item>
-		<sr-item separator="separator"></sr-item>
+		<sr-item separator></sr-item>
 		<sr-item href="javascript:console.log('clicked')">Logout</sr-item>
 	</sr-list>
 
@@ -55,12 +55,12 @@ __Note__: strikethrough -> not implemented
   - ~~Values: "vertical", "horizontal"~~ (buggy)
 
 ##### sr-item
-* icon: Add a icon image in left of the text (only on firefox)
+* icon: Add a icon image in left of the text
 * ~~icon-class: Class of image src. [Like as Font Awesome](http://fortawesome.github.io/Font-Awesome/)~~
-* disabled: Disable it (only on firefox)
-* selected: Select it  (only on firefox)
+* disabled: Disable it
+* selected: Select it
 * href: As a[type=href] attribute. Use to redirect page or add javascript methods (only on firefox)
-* separator: Separator divider (only sr-menu[horizontal] and firefox)
+* separator: Separator divider (only sr-menu[horizontal])
 
 #### ~~Handling~~
 ##### sr-menu
