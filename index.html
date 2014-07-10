@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<script src="bower_components/platform/platform.js"></script>
+	<link rel="import" href="sr-list.html" />
+	<title>Tag sr-list </title>
+	<style type="text/css">
+		body {
+			font-family: Roboto, Calibri, Arial;
+			font-size: 14px;
+		}
+	</style>
+  </head>
+
+  <body>
+  	<h1> &lt;sr-list&gt; </h2>
+
+	<h2> As list-group (type="vertical") </h2>
+	<aside role="complementary">
+
+	<sr-list type="vertical">
+		<sr-item>Normal</sr-item>
+		<sr-item selected="selected">Selected</sr-item>
+		<sr-item disabled="disabled">Disabled</sr-item>
+		<sr-item separator="separator"></sr-item>
+		<sr-item icon="icon.png">With icon</sr-item>
+		<sr-item icon-class="fa-plus">With icon-class</sr-item>
+		<sr-item separator="separator"></sr-item>
+		<sr-item href="index.html">With href (please, mouseover me)</sr-item>
+	</sr-list>
+
+	</aside>
+
+	<h2> As menu (type="horizontal") </h2>
+	<nav role="navigation">
+
+	<sr-list type="horizontal">
+		<sr-item icon="icon.png">A menu item</sr-item>
+		<sr-item separator="separator"></sr-item>
+		<sr-item href="javascript:console.log('clicked')">Logout</sr-item>
+	</sr-list>
+
+	</nav>
+	* [implementar aria-disabled](http://www.w3.org/WAI/PF/aria/states_and_properties#aria-disabled)
+  </body>
+</html>

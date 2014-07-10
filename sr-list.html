@@ -1,0 +1,133 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<polymer-element name="sr-list" attributes="type id" noscript>
+<template>
+	<style>
+		:host {
+			display: block;
+			background: #EDEEF2;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+	<ul id="sr-list" data-type="{{type}}" role="list">
+		<content></content>
+	</ul>
+
+</template>
+</polymer-element>
+
+<polymer-element name="sr-item" attributes="href disabled separator selected icon" noscript>
+<template>
+	<style>
+		:host {
+			border-bottom: 1px solid #FFF;
+			color: #428bca;
+			cursor: default;
+			padding: 10px 15px;
+		}
+		:host, a {
+			display: block;
+		}
+		:host-context(sr-list[type="horizontal"]) {
+			display: inline-block;
+		}
+		li {
+			list-style: none;
+		}
+		a { /* buggy all */
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		/* Borda */
+		:host-context(sr-list[type="horizontal"]) {
+			border-right: 1px solid #FFF;
+			border-bottom: none;
+		}
+		:host-context(sr-list):last-child { /* buggy on Chrome */
+			border: none;
+		}
+
+		/* Separator */
+		:host[separator] { /* buggy on Chrome */
+			padding-top: 1px;
+			padding-bottom: 1px;
+			background: rgba(255, 255, 255, 0.3);
+		}
+		:host-context(sr-list[type="horizontal"]) li[data-separator=separator] {
+			display: inherit; /* buggy all */
+		}
+
+		/*
+		sr-list[separator] + :host-context(sr-list[type="horizontal"]) {
+			border-left: 1px solid #FFF;
+		}
+		*/
+
+		/* Item da lista - Estados */
+		:host:not(.icon):not([separator]):hover { /* buggy on Chrome */
+			background: rgba(0, 0, 0, 0.07); /* buggy on Chrome/Firefox - dont work/not visible */
+		}
+		:host[selected] { /* buggy on Chrome */
+			background: #FFCC00;
+		}
+		:host[disabled] { /* buggy on Chrome */
+			background-color: rgba(255, 255, 255, 0.8);
+			box-shadow: none;
+			cursor: not-allowed !important;
+			opacity: 0.65;
+			pointer-events: none;
+		}
+
+		/*
+		a:focus {
+			outline: none;
+		}
+		a:focus span {
+			outline: 1px #a4c6fd solid;
+			background-color: rgba(255, 255, 255, 0.8);
+		}
+		a:active span {
+			background-color: #FFDD00 !important;
+		}
+		*/
+
+		/* implementando */
+		.icon {
+			margin-left: -7.5px; /* 15px/2 */
+			margin-right: 7.5px; /* 15px/2 */
+			display: inline;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	</style>
+
+	<template id="content">
+		<template if="{{icon}}">
+			<span class="icon" style="background-image:url({{icon}})" />
+		</template>
+		<content></content>
+	</template>
+
+	<li id="#sr-item"
+		role="{{ !separator ? 'listitem' : 'separator' }}"
+		aria-disabled="{{disabled ? 'true' : 'false'}}"
+	>
+		<template if="{{!separator}}">
+			<template if="{{href}}">
+				<a href="{{href}}">
+					<template bind ref="content"></template>
+				</a>
+			</template>
+			<template if="{{!href}}">
+				<template bind ref="content"></template>
+			</template>
+		</template>
+	</li>
+</template>
+</polymer-element>

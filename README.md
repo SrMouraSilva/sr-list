@@ -52,17 +52,17 @@ __Note__: strikethrough -> not implemented
 #### Attributes
 ##### sr-list
 * ~~type~~:
-* * ~~Values: "vertical", "horizontal"~~
+  - ~~Values: "vertical", "horizontal"~~ (buggy)
 
 ##### sr-item
-* icon: Add a icon image in left of the text
+* icon: Add a icon image in left of the text (buggy)
 * ~~icon-class: Class of image src. [Like as Font Awesome](http://fortawesome.github.io/Font-Awesome/)~~
-* disabled: Disable a list element
-* * Value: "disabled"
-* selected: Disable a list element
-* * Value: "false", "true"
-* href: As a[type=href] attribute. Use to redirect page or add javascript methods
-* separator: Separator divider
+* disabled: Disable a list element (buggy)
+  - Value: "disabled"
+* selected: Disable a list element (buggy)
+  - Value: "false", "true"
+* href: As a[type=href] attribute. Use to redirect page or add javascript methods (buggy)
+* separator: Separator divider (buggy)
 
 ### ~~Handling~~
 * ~~add~~
@@ -70,7 +70,7 @@ __Note__: strikethrough -> not implemented
 * ~~del~~
 * ~~set~~
 * ~~disable~~
-* * ~~Value: "false", "true"~~
+  - ~~Value: "false", "true"~~
 * ~~select(int position)~~
 * ~~getSelected~~
 * ~~getSelectedAll~~
