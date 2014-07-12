@@ -12,7 +12,8 @@ A ideia do <sr-list> é justamente dar o básico do que já precisamos há tempo
 
 Support
 ----------
-Firefox, Chrome
+Firefox, Chrome (linux)
+Chrome (windows): Impementing
 
 How to use
 ----------
@@ -64,26 +65,33 @@ __Note__: strikethrough -> not implemented
 
 #### ~~Handling~~
 ##### sr-menu
-* ~~add~~
-* ~~get~~
-* ~~del~~
+* add(label, attributes, position) Add a sr-item in the menu
+  - label:      String     Label of list item
+  - attributes: Object     {"attribute-name": "value"}
+  - position:   Int        Position where item will be added.
+  - position:   undefined  Last position
+* get(index) Return the item with this 'index'
+  - index: Int  index of item
+* getItems() Return all children items
+* remove(index) Remove item in the index position
+  - index: Int  index position. -1 as last
+* sr-item getSelected() Return the first element with state seleted
+* [sr-item] getSelectedAll() Return all the elements with state seleted
 * ~~set~~
-* ~~disable~~
-  - ~~Value: "false", "true"~~
-* ~~select(int position)~~
-* ~~getSelected~~
-* ~~getSelectedAll~~
 
 ##### sr-item
-* isSelected(): return boolean; 
-* select(): Change state to select;
-* select(false): Change state to select;
-* isDisabled(): return boolean;
-* disable(): Change state to disabled;
-* disable(false): Change state to enabled;
+* boolena isSelected() return boolean
+* select(state) Change state to select
+  - state: undefined  Change state to selected
+  - state: boolean    Change state to unselected
+* boolean isDisabled() return boolean
+* disable() Change state to disabled
+* disable(state) Change state to enabled
+  - state: undefined  Change state to disabled
+  - state: boolean    Change state to enabled
 
 #### ~~Customing desing~~
-You can edit style! Try:
+~~You can edit style! Try:~~
 
 ```
 sr-list {

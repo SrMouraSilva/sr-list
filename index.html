@@ -1,25 +1,49 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed' rel='stylesheet' type='text/css'>
 	<script src="bower_components/platform/platform.js"></script>
+
 	<link rel="import" href="sr-list.html" />
+    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+
 	<title>Tag sr-list </title>
-	<style type="text/css">
-		body {
-			font-family: Roboto, Calibri, Arial;
-			font-size: 14px;
-		}
-	</style>
   </head>
 
   <body>
-  	<h1> &lt;sr-list&gt; </h2>
+  	<h1> &lt;sr-list&gt; </h1>
 
 	<h2> As list-group (type="vertical") </h2>
-	<aside role="complementary">
 
-	<sr-list type="vertical">
+	<aside role="complementary">
+	<sr-list type="vertical" unresolved>
+		<sr-item>Normal</sr-item>
+		<sr-item selected>Selected</sr-item>
+		<sr-item disabled>Disabled</sr-item>
+		<sr-item selected disabled>Selected and disabled</sr-item>
+		<sr-item selected separator></sr-item>
+		<sr-item icon="icon.png">With icon</sr-item>
+		<sr-item icon-class="icon-check-square">With icon-class</sr-item>
+        <sr-item class="icon-check-square">With icon-class</sr-item>
+		<sr-item separator></sr-item>
+		<sr-item href="index.html">With href (Mouseover me! Focus me!)</sr-item>
+	</sr-list>
+	</aside>
+
+	<h2> As menu (type="horizontal") </h2>
+
+	<nav role="navigation">
+	<sr-list type="horizontal" unresolved>
+		<sr-item id="test" icon="icon.png">A menu item</sr-item>
+		<sr-item separator></sr-item>
+		<sr-item href="javascript:console.log('clicked')">Logout</sr-item>
+	</sr-list>
+	</nav>
+
+    <h2> Changed style </h2>
+
+    <h3>Preview</h3>
+    <sr-list id="styled" type="vertical" unresolved>
 		<sr-item>Normal</sr-item>
 		<sr-item selected>Selected</sr-item>
 		<sr-item disabled>Disabled</sr-item>
@@ -28,21 +52,43 @@
 		<sr-item icon="icon.png">With icon</sr-item>
 		<sr-item icon-class="fa-plus">With icon-class</sr-item>
 		<sr-item separator></sr-item>
-		<sr-item href="index.html">With href (please, mouseover me)</sr-item>
+		<sr-item href="index.html">With href (Mouseover me! Focus me!)</sr-item>
 	</sr-list>
+    <style>
+        
+    </style>
 
-	</aside>
+    <h3>Style</h3>
+<pre><code>    &lt;style&gt;
+        #styled {
+            background-color: #33393D;
+        }
+        #styled sr-item {
+            color: #FFF;
+            transition: background-color 0.2s linear;
+        }
+        #styled sr-item:hover {
+            background-color: rgba(0,0,0,0.6);
+        }
+        #styled sr-item[selected] {
+            background-color: #80D580;
+        }
+        #styled sr-item[selected]:hover {
+            background-color: #80A080;
+        }
+        #styled sr-item[selected][disabled] {
+            color: #DDD;
+            background-color: #769476;
+        }
+        #styled sr-item[disabled] {
+            background-color: #777;
+        }
+    &lt;/style&gt;
+</code></pre>
 
-	<h2> As menu (type="horizontal") </h2>
-	<nav role="navigation">
-
-	<sr-list type="horizontal">
-		<sr-item id="test" icon="icon.png">A menu item</sr-item>
-		<sr-item separator></sr-item>
-		<sr-item href="javascript:console.log('clicked')">Logout</sr-item>
-	</sr-list>
-
-	</nav>
+    <h2>Javascript</h2>
+      <h3>Click to enable/disable</h3>
+      <h3>Click to select/unselect</h3>
 	* [implementar aria-disabled](http://www.w3.org/WAI/PF/aria/states_and_properties#aria-disabled)
   </body>
   <script>
