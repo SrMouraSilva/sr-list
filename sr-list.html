@@ -196,7 +196,11 @@
             <content></content>
         </template>
 
-        <li id="#sr-item" role="{{ !separator ? 'listitem' : 'separator' }}" aria-disabled="{{disabled ? 'true' : 'false'}}">
+        <li id="#sr-item" 
+            role="{{ separator!='' ? 'listitem' : 'separator' }}" 
+            aria-disabled="{{disabled=='' ? 'true' : 'false'}}"
+            aria-selected="{{selected=='' ? 'true' : 'false'}}"
+            >
             <template if="{{!separator}}">
                 <template if="{{href}}">
                     <a href="{{href}}">

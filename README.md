@@ -63,7 +63,7 @@ __Note__: strikethrough -> not implemented
 * href: As a[type=href] attribute. Use to redirect page or add javascript methods (only on firefox)
 * separator: Separator divider (only sr-menu[horizontal])
 
-#### ~~Handling~~
+#### Handling
 ##### sr-menu
 * add(label, attributes, position) Add a sr-item in the menu
   - label:      String     Label of list item
@@ -90,8 +90,8 @@ __Note__: strikethrough -> not implemented
   - state: undefined  Change state to disabled
   - state: boolean    Change state to enabled
 
-#### ~~Customing desing~~
-~~You can edit style! Try:~~
+#### Customing desing
+You can edit style! Try:
 
 ```
 sr-list {
@@ -103,12 +103,20 @@ sr-item {
 sr-item[selected] {
 	background-color:
 }
+sr-item[selected]:hover {
+	background-color:
+}
 sr-item[disabled] {
+	background-color:
+}
+sr-item[selected][disabled] {
 	background-color:
 }
 sr-item:hover {
 	background-color:
 }
+
+/* Buggy */
 sr-item:focus {
 	background-color:
 }
