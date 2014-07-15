@@ -10,6 +10,10 @@ Quando é necessário em um webapp, temos que por vezes adicionar, remover, desa
 
 A ideia do <sr-list> é justamente dar o básico do que já precisamos há tempos de uma forma amigável e customizável.
 
+Demo
+------
+[Online demo in here](https://donnot-iberia.codio.io/index.html)
+
 Support
 ----------
 Firefox, Chrome (linux)
@@ -54,17 +58,18 @@ __Note__: strikethrough -> not implemented
 ##### sr-list
 * ~~type~~:
   - ~~Values: "vertical", "horizontal"~~ (buggy)
+* disable: Disable it
 
 ##### sr-item
 * icon: Add a icon image in left of the text
 * ~~icon-class: Class of image src. [Like as Font Awesome](http://fortawesome.github.io/Font-Awesome/)~~
 * disabled: Disable it
 * selected: Select it
-* href: As a[type=href] attribute. Use to redirect page or add javascript methods (only on firefox)
+* href: As a[type=href] attribute. Use to redirect page or add javascript methods
 * separator: Separator divider (only sr-menu[horizontal])
 
 #### Handling
-##### sr-menu
+##### sr-list
 * add(label, attributes, position) Add a sr-item in the menu
   - label:      String     Label of list item
   - attributes: Object     {"attribute-name": "value"}
@@ -76,8 +81,12 @@ __Note__: strikethrough -> not implemented
 * remove(index) Remove item in the index position
   - index: Int  index position. -1 as last
 * sr-item getSelected() Return the first element with state seleted
-* [sr-item] getSelectedAll() Return all the elements with state seleted
-* ~~set~~
+* [sr-item's] getSelectedAll() Return all the elements with state seleted
+* disable() Change state to disabled
+* disable(state) Change state to enabled
+  - state: undefined  Change state to disabled
+  - state: boolean    Change state to enabled
+
 
 ##### sr-item
 * boolena isSelected() return boolean
@@ -89,6 +98,9 @@ __Note__: strikethrough -> not implemented
 * disable(state) Change state to enabled
   - state: undefined  Change state to disabled
   - state: boolean    Change state to enabled
+* int getIndex() Return the index of the element. -1
+* int getIndex() Return -1: Could not be found
+
 
 #### Customing desing
 You can edit style! Try:

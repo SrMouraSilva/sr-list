@@ -13,7 +13,7 @@
   <body>
   	<h1> &lt;sr-list&gt; </h1>
 
-	<h2> As list-group (type="vertical") </h2>
+	<h2> As list-group (sr-list[type=vertical]) </h2>
 
 	<aside role="complementary">
 	<sr-list type="vertical" unresolved>
@@ -24,13 +24,14 @@
 		<sr-item selected separator></sr-item>
 		<sr-item icon="icon.png">With icon</sr-item>
 		<sr-item icon-class="icon-check-square">With icon-class</sr-item>
-        <sr-item class="icon-check-square">With icon-class</sr-item>
+        <sr-item class="icon-check-square">With class (firefox only ¬¬')</sr-item>
+        <sr-item class="icon-check-square chrome">With class (forced chrome, inspect it)</sr-item>
 		<sr-item separator></sr-item>
 		<sr-item href="index.html">With href (Mouseover me! Focus me!)</sr-item>
 	</sr-list>
 	</aside>
 
-	<h2> As menu (type="horizontal") </h2>
+	<h2> As menu (sr-list[type=horizontal]) </h2>
 
 	<nav role="navigation">
 	<sr-list type="horizontal" unresolved>
@@ -40,6 +41,14 @@
 	</sr-list>
 	</nav>
 
+    <h2> As disabled (sr-list[disabled]) </h2>
+    <nav role="navigation">
+	<sr-list type="horizontal" unresolved disabled>
+		<sr-item id="test" icon="icon.png">A menu item</sr-item>
+		<sr-item separator></sr-item>
+		<sr-item href="javascript:console.log('clicked')">Logout</sr-item>
+	</sr-list>
+	</nav>
     <h2> Changed style </h2>
 
     <h3>Preview</h3>

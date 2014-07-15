@@ -9,7 +9,7 @@
 	font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"]:before, [class*=" icon-"]:before {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -53,6 +53,13 @@ sr-list[unresolved]:after {
     padding: 15px;
     content: 'loading...';
     color: #ccc;
+}
+
+sr-item.chrome[class^="icon-"]:before {
+    font-size: 24px;
+    color: #000;
+    margin: -3.5px 7.5px 0 0;
+    float: left;
 }
 
 #styled {

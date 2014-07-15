@@ -4,8 +4,17 @@
     <template>
         <style>
             :host {
+                -webkit-user-select: none;
+                -moz-user-select: none;
                 display: block;
                 background: #EDEEF2;
+            }
+            :host([disabled]) {
+                background-color: #F6F7F8; /* rgba(255, 255, 255, 0.8) */
+                box-shadow: none;
+                cursor: not-allowed !important;
+                opacity: 0.65;
+                pointer-events: none;
             }
             ul {
                 margin: 0;
@@ -19,6 +28,13 @@
 
     <script>
 (function() {
+    var changeStatus = function(self, attribute, state) {
+        if(state != false) {
+            self.setAttribute(attribute, attribute);
+        } else {
+            self.removeAttribute(attribute);
+        }
+    }
     Polymer('sr-list', {
         getItems: function() {
             return this.children;
@@ -55,6 +71,7 @@
             }
 
             this.insertBefore(item, this.get(position));
+            return item;
         },
         /** Remove um item do menu com o index dado
          * 
@@ -66,8 +83,17 @@
             // Negative values
             index = index < 0 ? this.getItems().length + index : index;
 
-            this.removeChild(this.get(index));
-        }
+            var item = this.get(index);
+            this.removeChild(item);
+            return item;
+        },
+        /** Desativa/ativa o menu
+         * 
+         * @param index  Int index position. -1 as last
+         */
+        disable: function(state) {
+            changeStatus(this, "disabled", state);
+        },
     });
 })();
     </script>
@@ -115,6 +141,12 @@
             /*  Horizontal  */
             :host-context(sr-list[type="horizontal"]) :host([separator]) + :host {
                 border-left: 1px solid #FFF;
+            }
+            :host-context(sr-list[type="horizontal"]) [role=separator] {
+                margin: 22px 0 0px;
+            }
+            :host-context(sr-list[type="horizontal"] sr-item) {
+                background-color: red;
             }
 
 
@@ -180,9 +212,12 @@
                 vertical-align: middle;
             }
             /* implementing */
-            /* Icon-class */
-            :host(:before) {
-                /* color: #000 !important;  buggy on Chrome */
+            /* Class - https://github.com/Polymer/platform/issues/70 */
+            :host::before { /* :host(::before) buggy on Chrome */ 
+                font-size: 24px;
+                color: #000;
+                margin: -3.5px 7.5px 0 0;
+                float: left;
             }
         </style>
 
@@ -191,7 +226,7 @@
                 <span class="icon" style="background-image:url({{icon}})" />
             </template>
             <template if="{{icon-class}}">
-                <span class="{{icon-class}}" style="" />
+                <span class="icon-class {{icon-class}}" style="" />
             </template>
             <content></content>
         </template>
@@ -226,6 +261,15 @@
     var is = function(self, attribute) {
         return self.getAttribute(attribute) == attribute;
     }
+    function indexInParent(node) {
+        var children = node.parentNode.childNodes;
+        var num = 0;
+        for (var i=0; i<children.length; i++) {
+             if (children[i]==node) return num;
+             if (children[i].nodeType==1) num++;
+        }
+        return -1;
+    }
     Polymer('sr-item', {
         isSelected: function() {
             return is(this, "selected");
@@ -239,6 +283,9 @@
         disable: function(state) {
             changeStatus(this, "disabled", state);
         },
+        getIndex: function() {
+            return indexInParent(this);
+        }
     });
 })();
     </script>
