@@ -68,53 +68,53 @@ __Note__: strikethrough -> not implemented
 ##### sr-list
 Attribute | Options         | Default                    | Description
 ---       | ---             | ---                        | ---
-~~`type`~~    | `vertical`, `horizontal` | `vertical`        | Layout/Arrangement
-`disable`     |        |         | Disable it
+~~`type`~~    | `vertical`, `horizontal` | `vertical`    | Layout/Arrangement
+`disable`     |                          |               | Disable it
 
 ##### sr-item
 Attribute | Options         | Default                    | Description
 ---       | ---             | ---                        | ---
-`icon`    | image address  |         | Add a icon image in left of the text
-`icon-class` | css's class  |         | Class of image src. [Like as Font Awesome](http://fortawesome.github.io/Font-Awesome/)
-`disable`     |        |         | Disable it
-`selected`     |        |         | Select it
-`href`     | `javascript:function()`, `an_address.html`       |         | As `a[type=href]` attribute. Use to redirect page or add javascript methods
-`selected`     |        |         | Select it
-`separator`     |        |         | Separator divider (only works on `sr-list[vertical]`)
+`icon`        | image address                                    |         | Add a icon image in left of the text
+`icon-class`  | css's class                                      |         | Class of image src. [Like as Font Awesome](http://fortawesome.github.io/Font-Awesome/)
+`disable`     |                                                  |         | Disable it
+`selected`    |                                                  |         | Select it
+`href`        | `javascript:function()`, `an_address.html`       |         | As `a[type=href]` attribute. Use to redirect page or add javascript methods
+`selected`    |                                                  |         | Select it
+`separator`   |                                                  |         | Separator divider (only works on `sr-list[vertical]`)
 
 #### Handling
 ##### sr-list
-Method | Description
----       | ---             
-`add(label, attributes, position)` | Add a sr-item in the menu         | return `<sr-item>` generated
-                    | `label`                  | `String`                   | Item label
-                    | `attributes`             | `Object`              | `{"attribute-name": "value"}`
-                    | `position`               | `Integer`             | Position where item will be added
-                    | `position`               | `undefined`           | Last position
-`get(index)` | Return the item with this 'index'         | return `<sr-item>`
-                    | `index`               | `Integer`           | Index of item
-`getItems()` | Return the item with this 'index'         | return `[<sr-item>, ...]`
-`remove(index)` | Remove and return item in the 'index' position         | return `<sr-item>`
-                | `index`                   | `Integer`        | Index position. -1 for last
-`getSelected()` | Return the first element with state seleted         | return `<sr-item>`
-`getSelectedAll()` | Return all the elements with state seleted         | return `[<sr-item>, ...]`
-`disable(state)` | Change state to disabled/enabled          |
-                | `state`                   | `undefined`        | Change state to disabled
-                | `state`                   | `boolean`        | Change state to disabled/enabled
-  
+Method    | Description                                         | Return / Param               | Param description
+---       | ---                                                 | ---                          | ---
+`add(label, attributes, position)` | Add a sr-item in the menu  | return `<sr-item>` generated |
+                    | `label`                                   | `String`                     | Item label
+                    | `attributes`                              | `Object`                     | `{"attribute-name": "value"}`
+                    | `position`                                | `Integer`                    | Position where item will be added
+                    | `position`                                | `undefined`                  | Last position
+`get(index)`        | Return the item with this 'index'         | return `<sr-item>`           |
+                    | `index`                                   | `Integer`                    | Index of item
+`getItems()`        | Return the item with this 'index'         | return `[<sr-item>, ...]`    |
+`remove(index)`     | Remove and return item in the 'index' position | return `<sr-item>`      |
+                    | `index`                                   | `Integer`                    | Index position. -1 for last
+`getSelected()`     | Return the first element with state seleted | return `<sr-item>`         | 
+`getSelectedAll()`  | Return all the elements with state seleted  | return `[<sr-item>, ...]`  | 
+`disable(state)`    | Change state to disabled/enabled          |                              | 
+                    | `state`                                   | `undefined`                  | Change state to disabled     
+                    | `state`                                   | `boolean`                    | Change state to disabled/enabled
+
 
 ##### sr-item
-Method | Description
----       | ---             
-`isSelected` | This item is selected?         | return boolean
-`select(state)`       | Change state to select/unselect
-                    | `state`             | `undefined`                      | Change state to selected
-                    | `state`             | `boolean`                        | Change state to boolean value
-`isDisabled()` | This item is disables?         | return boolean
-`disable(state)`       | Change state to disabled/enabled
-                    | `state`             | `undefined`                      | Change state to disabled
-                    | `state`             | `boolean`                        | Change state to boolean value
-`getIndex()` | Return the index of the element or -1 if not found
+Method               | Description                                         | Return / Param | Param description
+---                  | ---                                                 | ---            | ---
+`isSelected`         | This item is selected?                              | return boolean | 
+`select(state)`      | Change state to select/unselect                     |                |
+                     | `state`                                             | `undefined`    | Change state to selected
+                     | `state`                                             | `boolean`      | Change state to boolean value
+`isDisabled()`       | This item is disables?                              | return boolean | 
+`disable(state)`     | Change state to disabled/enabled                    |                |
+                     | `state`                                             | `undefined`    | Change state to disabled
+                     | `state`                                             | `boolean`      | Change state to boolean value
+`getIndex()`         | Return the index of the element or -1 if not found  |                |
 
 
 #### Customing desing
