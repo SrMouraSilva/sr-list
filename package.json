@@ -14,13 +14,13 @@
   "keywords": [
     "Polymer",
     "Web",
-    "Component"
+    "Component",
+    "Web-components"
   ],
   "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
     "test",
     "tests"
   ],

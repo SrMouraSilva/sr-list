@@ -5,12 +5,13 @@
 	<script src="bower_components/platform/platform.js"></script>
 
 	<link rel="import" href="sr-list.html" />
-    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+    <link rel="stylesheet" type="text/css" href="demo-files/style.css" media="all">
 
 	<title>Tag sr-list </title>
   </head>
 
   <body>
+    <a href="https://github.com/SrMouraSilva/sr-list/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
   	<h1> &lt;sr-list&gt; </h1>
 
 	<h2> As list-group (sr-list[type=vertical]) </h2>
@@ -51,7 +52,7 @@
 	</nav>
     <h2> Changed style </h2>
 
-    <h3>Preview</h3>
+    <h3>Black version</h3>
     <sr-list id="styled" type="vertical" unresolved>
 		<sr-item>Normal</sr-item>
 		<sr-item selected>Selected</sr-item>
@@ -64,7 +65,6 @@
 		<sr-item href="index.html">With href (Mouseover me! Focus me!)</sr-item>
 	</sr-list>
 
-    <h3>Style</h3>
 <pre><code>    &lt;style&gt;
         #styled {
             background-color: #33393D;
@@ -91,6 +91,19 @@
         }
     &lt;/style&gt;
 </code></pre>
+
+    <h3>Bootstrap 3 version</h3>
+    <sr-list id="bootstrap" type="vertical" unresolved>
+		<sr-item>Normal</sr-item>
+		<sr-item selected>Selected</sr-item>
+		<sr-item disabled>Disabled</sr-item>
+		<sr-item selected disabled>Selected and disabled</sr-item>
+		<sr-item separator></sr-item>
+		<sr-item icon="icon.png">With icon</sr-item>
+		<sr-item icon-class="fa-plus">With icon-class</sr-item>
+		<sr-item separator></sr-item>
+		<sr-item href="index.html">With href (Mouseover me! Focus me!)</sr-item>
+	</sr-list>
 
     <h2>Javascript</h2>
       <h3>Click to enable/disable</h3>

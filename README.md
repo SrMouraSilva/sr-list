@@ -5,107 +5,122 @@ An web component list-group abstraction with pre-defined handling methods
 
 About
 ------
-Em algum momento você já precisou [de um menu vertical simples](http://getbootstrap.com/components/#list-group), ou uma [lista passo a passo](http://www.polymer-project.org/#learn).
-Quando é necessário em um webapp, temos que por vezes adicionar, remover, desabilitar, atualizar dinamicamente estes itens, e para fazer algo minimamente aproveitável, gasta-se um tempo abstraindo e criando código.
+At some point you've needed [a simple vertical menu](http://getbootstrap.com/components/#list-group) or [list step by step](http://www.polymer-project.org/#learn).
+When it is necessary in a webapp, we sometimes add, remove, disable, dynamically update these items, and do something minimally serviceable,
+uses a time abstracting and creating code.
 
-A ideia do <sr-list> é justamente dar o básico do que já precisamos há tempos de uma forma amigável e customizável.
+The idea `<sr-list>` just give the basics of what we need to have some time without restricting its customization.
+
+Image example
+--------------
+![Image of example below](demo-files/menu_demo.png)
 
 Demo
 ------
-[Online demo in here](https://donnot-iberia.codio.io/index.html)
+[Online demo in here!](http://donnot-iberia.codio.io/index.html)
 
 Support
 ----------
-Firefox, Chrome (linux)
-Chrome (windows): Impementing
+Lastest Firefox and Chrome (Impementing)
+
+Use Suggestions
+---------------
+As the technology of web components is recent, it is recommended a controllable environment, 
+such as [node-webkit](https://github.com/rogerwang/node-webkit).
 
 How to use
 ----------
 
-### Marcation
-```hmtl
+### Overview
+  ```html
 <h2> As list-group (type="vertical") </h2>
-	<aside role="complementary">
+<aside role="complementary">
 
 	<sr-list type="vertical">
-		<sr-item>Normal</sr-item>
-		<sr-item selected>Selected</sr-item>
-		<sr-item disabled>Disabled</sr-item>
-		<sr-item separator></sr-item>
-		<sr-item icon="icon.png">With icon</sr-item>
-		<sr-item icon-class="fa-plus">With icon-class</sr-item>
-		<sr-item separator></sr-item>
+        <sr-item>Normal</sr-item>
+        <sr-item selected>Selected</sr-item>
+        <sr-item disabled>Disabled</sr-item>
+        <sr-item separator></sr-item>
+        <sr-item icon="icon.png">With icon</sr-item>
+        <sr-item icon-class="fa-plus">With icon-class</sr-item>
+        <sr-item separator></sr-item>
 		<sr-item href="index.html">With href (please, mouseover me)</sr-item>
 	</sr-list>
 
-	</aside>
+</aside>
 
-	<h2> As menu (type="horizontal") </h2>
-	<nav role="navigation">
+<h2> As menu (type="horizontal") </h2>
+<nav role="navigation">
 
-	<sr-list type="horizontal">
-		<sr-item icon="icon.png">A menu item</sr-item>
-		<sr-item separator></sr-item>
-		<sr-item href="javascript:console.log('clicked')">Logout</sr-item>
+    <sr-list type="horizontal">
+        <sr-item icon="icon.png">A menu item</sr-item>
+        <sr-item separator></sr-item>
+        <sr-item href="javascript:console.log('clicked')">Logout</sr-item>
 	</sr-list>
 
-	</nav>
+</nav>
+  ```
 
-```
-__Note__: strikethrough -> not implemented
 
 #### Attributes
+__Note__: strikethrough -> not implemented
+
 ##### sr-list
-* ~~type~~:
-  - ~~Values: "vertical", "horizontal"~~ (buggy)
-* disable: Disable it
+Attribute | Options         | Default                    | Description
+---       | ---             | ---                        | ---
+~~`type`~~    | `vertical`, `horizontal` | `vertical`        | Layout/Arrangement
+`disable`     |        |         | Disable it
 
 ##### sr-item
-* icon: Add a icon image in left of the text
-* ~~icon-class: Class of image src. [Like as Font Awesome](http://fortawesome.github.io/Font-Awesome/)~~
-* disabled: Disable it
-* selected: Select it
-* href: As a[type=href] attribute. Use to redirect page or add javascript methods
-* separator: Separator divider (only sr-menu[horizontal])
+Attribute | Options         | Default                    | Description
+---       | ---             | ---                        | ---
+`icon`    | image address  |         | Add a icon image in left of the text
+`icon-class` | css's class  |         | Class of image src. [Like as Font Awesome](http://fortawesome.github.io/Font-Awesome/)
+`disable`     |        |         | Disable it
+`selected`     |        |         | Select it
+`href`     | `javascript:function()`, `an_address.html`       |         | As `a[type=href]` attribute. Use to redirect page or add javascript methods
+`selected`     |        |         | Select it
+`separator`     |        |         | Separator divider (only works on `sr-list[vertical]`)
 
 #### Handling
 ##### sr-list
-* add(label, attributes, position) Add a sr-item in the menu
-  - label:      String     Label of list item
-  - attributes: Object     {"attribute-name": "value"}
-  - position:   Int        Position where item will be added.
-  - position:   undefined  Last position
-* get(index) Return the item with this 'index'
-  - index: Int  index of item
-* getItems() Return all children items
-* remove(index) Remove item in the index position
-  - index: Int  index position. -1 as last
-* sr-item getSelected() Return the first element with state seleted
-* [sr-item's] getSelectedAll() Return all the elements with state seleted
-* disable() Change state to disabled
-* disable(state) Change state to enabled
-  - state: undefined  Change state to disabled
-  - state: boolean    Change state to enabled
-
+Method | Description
+---       | ---             
+`add(label, attributes, position)` | Add a sr-item in the menu         | return `<sr-item>` generated
+                    | `label`                  | `String`                   | Item label
+                    | `attributes`             | `Object`              | `{"attribute-name": "value"}`
+                    | `position`               | `Integer`             | Position where item will be added
+                    | `position`               | `undefined`           | Last position
+`get(index)` | Return the item with this 'index'         | return `<sr-item>`
+                    | `index`               | `Integer`           | Index of item
+`getItems()` | Return the item with this 'index'         | return `[<sr-item>, ...]`
+`remove(index)` | Remove and return item in the 'index' position         | return `<sr-item>`
+                | `index`                   | `Integer`        | Index position. -1 for last
+`getSelected()` | Return the first element with state seleted         | return `<sr-item>`
+`getSelectedAll()` | Return all the elements with state seleted         | return `[<sr-item>, ...]`
+`disable(state)` | Change state to disabled/enabled          |
+                | `state`                   | `undefined`        | Change state to disabled
+                | `state`                   | `boolean`        | Change state to disabled/enabled
+  
 
 ##### sr-item
-* boolena isSelected() return boolean
-* select(state) Change state to select
-  - state: undefined  Change state to selected
-  - state: boolean    Change state to unselected
-* boolean isDisabled() return boolean
-* disable() Change state to disabled
-* disable(state) Change state to enabled
-  - state: undefined  Change state to disabled
-  - state: boolean    Change state to enabled
-* int getIndex() Return the index of the element. -1
-* int getIndex() Return -1: Could not be found
+Method | Description
+---       | ---             
+`isSelected` | This item is selected?         | return boolean
+`select(state)`       | Change state to select/unselect
+                    | `state`             | `undefined`                      | Change state to selected
+                    | `state`             | `boolean`                        | Change state to boolean value
+`isDisabled()` | This item is disables?         | return boolean
+`disable(state)`       | Change state to disabled/enabled
+                    | `state`             | `undefined`                      | Change state to disabled
+                    | `state`             | `boolean`                        | Change state to boolean value
+`getIndex()` | Return the index of the element or -1 if not found
 
 
 #### Customing desing
 You can edit style! Try:
 
-```
+```css
 sr-list {
 	background-color:
 }
