@@ -23,7 +23,7 @@
 		<sr-item disabled>Disabled</sr-item>
 		<sr-item selected disabled>Selected and disabled</sr-item>
 		<sr-item selected separator></sr-item>
-		<sr-item icon="icon.png">With icon</sr-item>
+		<sr-item icon="demo-files/icon.png">With icon</sr-item>
 		<sr-item icon-class="icon-check-square">With icon-class</sr-item>
         <sr-item class="icon-check-square">With class (firefox only ¬¬')</sr-item>
         <sr-item class="icon-check-square chrome">With class (forced chrome, inspect it)</sr-item>
@@ -32,22 +32,12 @@
 	</sr-list>
 	</aside>
 
-	<h2> As menu (sr-list[type=horizontal]) </h2>
-
-	<nav role="navigation">
-	<sr-list type="horizontal" unresolved>
-		<sr-item id="test" icon="icon.png">A menu item</sr-item>
-		<sr-item separator></sr-item>
-		<sr-item href="javascript:console.log('clicked')">Logout</sr-item>
-	</sr-list>
-	</nav>
-
     <h2> As disabled (sr-list[disabled]) </h2>
     <nav role="navigation">
 	<sr-list type="horizontal" unresolved disabled>
-		<sr-item id="test" icon="icon.png">A menu item</sr-item>
+		<sr-item id="test" icon="demo-files/icon.png">Add file</sr-item>
 		<sr-item separator></sr-item>
-		<sr-item href="javascript:console.log('clicked')">Logout</sr-item>
+		<sr-item href="javascript:console.log('clicked')">Close</sr-item>
 	</sr-list>
 	</nav>
     <h2> Changed style </h2>
@@ -59,37 +49,37 @@
 		<sr-item disabled>Disabled</sr-item>
 		<sr-item selected disabled>Selected and disabled</sr-item>
 		<sr-item separator></sr-item>
-		<sr-item icon="icon.png">With icon</sr-item>
+		<sr-item icon="demo-files/icon.png">With icon</sr-item>
 		<sr-item icon-class="fa-plus">With icon-class</sr-item>
 		<sr-item separator></sr-item>
 		<sr-item href="index.html">With href (Mouseover me! Focus me!)</sr-item>
 	</sr-list>
 
 <pre><code>    &lt;style&gt;
-        #styled {
-            background-color: #33393D;
-        }
-        #styled sr-item {
-            color: #FFF;
-            transition: background-color 0.2s linear;
-        }
-        #styled sr-item:hover {
-            background-color: rgba(0,0,0,0.6);
-        }
-        #styled sr-item[selected] {
-            background-color: #80D580;
-        }
-        #styled sr-item[selected]:hover {
-            background-color: #80A080;
-        }
-        #styled sr-item[selected][disabled] {
-            color: #DDD;
-            background-color: #769476;
-        }
-        #styled sr-item[disabled] {
-            background-color: #777;
-        }
-    &lt;/style&gt;
+    #styled {
+        background-color: #33393D;
+    }
+    #styled sr-item {
+        color: #FFF;
+        transition: background-color 0.2s linear;
+    }
+    #styled sr-item:hover {
+        background-color: rgba(0,0,0,0.6);
+    }
+    #styled sr-item[selected] {
+        background-color: #80D580;
+    }
+    #styled sr-item[selected]:hover {
+        background-color: #80A080;
+    }
+    #styled sr-item[selected][disabled] {
+        color: #DDD;
+        background-color: #769476;
+    }
+    #styled sr-item[disabled] {
+        background-color: #777;
+    }
+&lt;/style&gt;
 </code></pre>
 
     <h3>Bootstrap 3 version</h3>
@@ -99,12 +89,44 @@
 		<sr-item disabled>Disabled</sr-item>
 		<sr-item selected disabled>Selected and disabled</sr-item>
 		<sr-item separator></sr-item>
-		<sr-item icon="icon.png">With icon</sr-item>
+		<sr-item icon="demo-files/icon.png">With icon</sr-item>
 		<sr-item icon-class="fa-plus">With icon-class</sr-item>
 		<sr-item separator></sr-item>
 		<sr-item href="index.html">With href (Mouseover me! Focus me!)</sr-item>
 	</sr-list>
-
+<pre><code>&lt;style&gt;
+    #bootstrap {
+        background-color: #FFF;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+    }
+    #bootstrap sr-item {
+        color: #555;
+        border-bottom: 1px solid #ddd;
+    }
+    #bootstrap sr-item:last-child {
+        border: none;
+    }
+    #bootstrap sr-item:hover {
+        background-color: #f5f5f5;
+    }
+    #bootstrap sr-item[selected] {
+        color: #FFF;
+        background-color: #428bca;
+        border-color: #428bca;
+    }
+    #bootstrap sr-item[selected]:hover {
+        background-color: rgba(66, 139, 202, 0.9);
+    }
+    #bootstrap sr-item[selected][disabled] {
+        color: #DDD;
+        background-color: #6E8BCA;
+    }
+    #bootstrap sr-item[disabled] {
+        background-color: #eee;
+    }
+&lt;/style&gt;
+</code></pre>
     <h2>Javascript</h2>
       <h3>Click to enable/disable</h3>
       <h3>Click to select/unselect</h3>

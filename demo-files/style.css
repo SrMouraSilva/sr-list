@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?-tyur35');
-	src:url('fonts/icomoon.eot?#iefix-tyur35') format('embedded-opentype'),
-		url('fonts/icomoon.woff?-tyur35') format('woff'),
-		url('fonts/icomoon.ttf?-tyur35') format('truetype'),
-		url('fonts/icomoon.svg?-tyur35#icomoon') format('svg');
+	src:url('../fonts/icomoon.eot?-tyur35');
+	src:url('../fonts/icomoon.eot?#iefix-tyur35') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-tyur35') format('woff'),
+		url('../fonts/icomoon.ttf?-tyur35') format('truetype'),
+		url('../fonts/icomoon.svg?-tyur35#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -61,6 +61,9 @@ sr-item.chrome[class^="icon-"]:before {
     margin: -3.5px 7.5px 0 0;
     float: left;
 }
+sr-item::shadow span {
+    color: #FFF;
+}
 
 #styled {
     background-color: #33393D;
@@ -85,9 +88,38 @@ sr-item.chrome[class^="icon-"]:before {
 #styled sr-item[disabled] {
     background-color: #777;
 }
-sr-item::shadow span {
-    color: #FFF;
+
+#bootstrap {
+    background-color: #FFF;
+    border-radius: 4px;
+    border: 1px solid #ddd;
 }
+#bootstrap sr-item {
+    color: #555;
+    border-bottom: 1px solid #ddd;
+}
+#bootstrap sr-item:last-child {
+    border: none;
+}
+#bootstrap sr-item:hover {
+    background-color: #f5f5f5;
+}
+#bootstrap sr-item[selected] {
+    color: #FFF;
+    background-color: #428bca;
+    border-color: #428bca;
+}
+#bootstrap sr-item[selected]:hover {
+    background-color: rgba(66, 139, 202, 0.9);
+}
+#bootstrap sr-item[selected][disabled] {
+    color: #DDD;
+    background-color: #6E8BCA;
+}
+#bootstrap sr-item[disabled] {
+    background-color: #eee;
+}
+
 
 code {
     font-family: Menlo, Monaco, Consolas,"Courier New", monospace;

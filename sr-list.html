@@ -1,6 +1,6 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 
-<polymer-element name="sr-list" attributes="type id">
+<polymer-element name="sr-list" attributes="disabled id">
     <template>
         <style>
             :host {
@@ -21,7 +21,7 @@
                 padding: 0;
             }
         </style>
-        <ul id="sr-list" data-type="{{type}}" role="list">
+        <ul id="sr-list" role="list">
             <content></content>
         </ul>
     </template>
@@ -111,9 +111,7 @@
             :host, a {
                 display: block;
             }
-            :host-context(sr-list[type="horizontal"]) {
-                display: inline-block;
-            }
+           
             li {
                 list-style: none;
             }
@@ -123,10 +121,6 @@
                 cursor: pointer;
             }
             /* Borda */
-            :host-context(sr-list[type="horizontal"]) {
-                border-right: 1px solid #FFF;
-                border-bottom: none;
-            }
             :host-context(sr-list):last-child {
                 /* buggy on Chrome */
                 border: none;
@@ -137,16 +131,6 @@
                 padding-top: 1px;
                 padding-bottom: 1px;
                 background: rgba(255, 255, 255, 0.3);
-            }
-            /*  Horizontal  */
-            :host-context(sr-list[type="horizontal"]) :host([separator]) + :host {
-                border-left: 1px solid #FFF;
-            }
-            :host-context(sr-list[type="horizontal"]) [role=separator] {
-                margin: 22px 0 0px;
-            }
-            :host-context(sr-list[type="horizontal"] sr-item) {
-                background-color: red;
             }
 
 

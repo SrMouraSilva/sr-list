@@ -33,7 +33,7 @@ How to use
 
 ### Overview
   ```html
-<h2> As list-group (type="vertical") </h2>
+<h2> As list-group </h2>
 <aside role="complementary">
 
 	<sr-list type="vertical">
@@ -48,17 +48,6 @@ How to use
 	</sr-list>
 
 </aside>
-
-<h2> As menu (type="horizontal") </h2>
-<nav role="navigation">
-
-    <sr-list type="horizontal">
-        <sr-item icon="icon.png">A menu item</sr-item>
-        <sr-item separator></sr-item>
-        <sr-item href="javascript:console.log('clicked')">Logout</sr-item>
-	</sr-list>
-
-</nav>
   ```
 
 
@@ -66,14 +55,13 @@ How to use
 __Note__: strikethrough -> not implemented
 
 ##### sr-list
-Attribute | Options         | Default                    | Description
----       | ---             | ---                        | ---
-~~`type`~~    | `vertical`, `horizontal` | `vertical`    | Layout/Arrangement
+Attribute     | Options                  | Default       | Description
+---           | ---                      | ---           | ---
 `disable`     |                          |               | Disable it
 
 ##### sr-item
-Attribute | Options         | Default                    | Description
----       | ---             | ---                        | ---
+Attribute     | Options             | Default                    | Description
+---           | ---                 | ---                        | ---
 `icon`        | image address                                    |         | Add a icon image in left of the text
 `icon-class`  | css's class                                      |         | Class of image src. [Like as Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 `disable`     |                                                  |         | Disable it
@@ -84,8 +72,8 @@ Attribute | Options         | Default                    | Description
 
 #### Handling
 ##### sr-list
-Method    | Description                                         | Return / Param               | Param description
----       | ---                                                 | ---                          | ---
+Method              | Description                               | Return / Param               | Param description
+---                 | ---                                       | ---                          | ---
 `add(label, attributes, position)` | Add a sr-item in the menu  | return `<sr-item>` generated |
                     | `label`                                   | `String`                     | Item label
                     | `attributes`                              | `Object`                     | `{"attribute-name": "value"}`
@@ -117,7 +105,7 @@ Method               | Description                                         | Ret
 `getIndex()`         | Return the index of the element or -1 if not found  |                |
 
 
-#### Customing desing
+#### Customing design
 You can edit style! Try:
 
 ```css
