@@ -1,4 +1,4 @@
-<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="../polymer/polymer.html">
 
 <polymer-element name="sr-list" attributes="disabled id">
     <template>
@@ -36,13 +36,20 @@
         }
     }
     Polymer('sr-list', {
+        /** @return All the children nodes
+         */
         getItems: function() {
             return this.children;
         },
+        /** Return the item with this 'index'
+         * @param {int} position - Index position
+         * @return the item with this 'index'
+         */
         get: function(position) {
             return this.getItems()[position];
         },
-        /** Return the first element with state seleted
+        /** 
+         * @return The first element with state seleted
          */
         getSelected: function() {
             return this.getSelectedAll()[0];

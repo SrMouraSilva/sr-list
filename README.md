@@ -23,6 +23,14 @@ Support
 ----------
 Lastest Firefox and Chrome (Impementing)
 
+## Custom Element Framework Compatibility
+
+- [ ] [Polymer](http://www.polymer-project.org/)
+- [ ] [X-Tags](http://www.x-tags.org/)
+- [x] [Angular.JS](https://angularjs.org/)
+- [ ] [React](http://facebook.github.io/react/)
+- [ ] [Ember](http://emberjs.com/)
+
 Use Suggestions
 ---------------
 As the technology of web components is recent, it is recommended a controllable environment, 
@@ -81,7 +89,7 @@ Method              | Description                               | Return / Param
                     | `position`                                | `undefined`                  | Last position
 `get(index)`        | Return the item with this 'index'         | return `<sr-item>`           |
                     | `index`                                   | `Integer`                    | Index of item
-`getItems()`        | Return the item with this 'index'         | return `[<sr-item>, ...]`    |
+`getItems()`        | Return all the children nodes             | return `[<sr-item>, ...]`    |
 `remove(index)`     | Remove and return item in the 'index' position | return `<sr-item>`      |
                     | `index`                                   | `Integer`                    | Index position. -1 for last
 `getSelected()`     | Return the first element with state seleted | return `<sr-item>`         | 
