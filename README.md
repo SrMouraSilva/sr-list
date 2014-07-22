@@ -1,7 +1,7 @@
 <sr-list>
 =========
 
-An web component list-group abstraction with pre-defined handling methods
+An (polymer) web component list-group abstraction with pre-defined handling methods
 
 About
 ------
@@ -25,9 +25,9 @@ Lastest Firefox and Chrome (Impementing)
 
 ## Custom Element Framework Compatibility
 
-- [ ] [Polymer](http://www.polymer-project.org/)
+- [x] [Polymer](http://www.polymer-project.org/)
 - [ ] [X-Tags](http://www.x-tags.org/)
-- [x] [Angular.JS](https://angularjs.org/)
+- [ ] [Angular.JS](https://angularjs.org/)
 - [ ] [React](http://facebook.github.io/react/)
 - [ ] [Ember](http://emberjs.com/)
 
